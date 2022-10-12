@@ -1,0 +1,197 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 5,
+    "passes": 5,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-10-12T15:24:46.376Z",
+    "end": "2022-10-12T15:25:16.650Z",
+    "duration": 30274,
+    "testsRegistered": 5,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "16cadfa8-d2f9-4c47-a030-5e824a464b58",
+      "title": "",
+      "fullFile": "C:\\Users\\IPTOTAL\\Desktop\\Prueba Puppeteer\\PruebaW3Schools.js",
+      "file": "\\PruebaW3Schools.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "fc97324b-f72e-45fb-af5b-388b133e8a9c",
+          "title": "Comenzando prueba",
+          "fullFile": "C:\\Users\\IPTOTAL\\Desktop\\Prueba Puppeteer\\PruebaW3Schools.js",
+          "file": "\\PruebaW3Schools.js",
+          "beforeHooks": [
+            {
+              "title": "\"before all\" hook in \"Comenzando prueba\"",
+              "fullTitle": "Comenzando prueba \"before all\" hook in \"Comenzando prueba\"",
+              "timedOut": false,
+              "duration": 942,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "browser = await puppeteer.launch({\n   ignoreHTTPSErrors: true,\n   headless: false,\n  \n \n   executablePath: 'C:\\\\Program Files\\\\Google\\\\Chrome\\\\Application\\\\chrome.exe',\n   args: [\n      \n      '--disable-dev-shm-usage','--start-maximized'],\n      \n      defaultViewport: null\n}) // opciones de lanzamiento\npage = await browser.newPage();",
+              "err": {},
+              "uuid": "20708bcd-89f3-4f16-adff-2844f5e469f4",
+              "parentUUID": "fc97324b-f72e-45fb-af5b-388b133e8a9c",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "P1 - Entrar a la pagina",
+              "fullTitle": "Comenzando prueba P1 - Entrar a la pagina",
+              "timedOut": false,
+              "duration": 12382,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "\"./assets/Paso 1.png\"",
+              "code": "try{\n\tawait page.goto('https://www.w3schools.com/');\n\tawait sleep(2000);\n\tawait page.type('input[id=\"search2\"]', 'Prueba');\n\tawait sleep(2000);\n\tawait page.click('a[title=\"Tutorials\"]');\n\tawait sleep(2000);\n\tawait page.click('a[href=\"/colors/default.asp\"]');\n\tawait sleep(2000);\n\tawait page.screenshot({ path: './mochawesome-report/assets/Paso 1.png'});\n\taddContext(this, './assets/Paso 1.png');\n}\ncatch (err) {\n\tthrow new Error('Conexión retardada' + err);\n}",
+              "err": {},
+              "uuid": "22a067a0-e957-463e-ad4f-e2cabbabfd19",
+              "parentUUID": "fc97324b-f72e-45fb-af5b-388b133e8a9c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "P2 - Entrar al color picker",
+              "fullTitle": "Comenzando prueba P2 - Entrar al color picker",
+              "timedOut": false,
+              "duration": 8678,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "\"./assets/Paso 2.png\"",
+              "code": "try{\n\tawait page.mouse.move(50, 300);\t\n\tawait page.mouse.wheel({deltaY: 1000});\n\tawait sleep(2000);\n\tawait page.click('a[href=\"colors_picker.asp\"]');\n\tawait sleep(2000);\n\tawait page.mouse.move(500,200);\n\tawait sleep(2000);\n\tawait page.mouse.wheel({deltaY: 300});\n\tawait sleep(2000);\n\tawait page.screenshot({ path: './mochawesome-report/assets/Paso 2.png'});\n\taddContext(this, './assets/Paso 2.png');\n}\ncatch (err) {\n\tthrow new Error('Conexión retardada' + err);\n}",
+              "err": {},
+              "uuid": "fcc5706b-d1ef-49a0-afab-5415d8066b0a",
+              "parentUUID": "fc97324b-f72e-45fb-af5b-388b133e8a9c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "P3 - Elegir azul",
+              "fullTitle": "Comenzando prueba P3 - Elegir azul",
+              "timedOut": false,
+              "duration": 2279,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "\"./assets/Paso 3.png\"",
+              "code": "try{\n\tawait page.mouse.click(500,200);\n\ttext = await page.$eval('span[id=\"colorhexDIV\"]', el => el.innerText);\n\tawait sleep(2000);\n\tawait page.screenshot({path: './mochawesome-report/assets/Paso 3.png'});\n\tif(text===\"#6699ff\"){\n\t\tconsole.log(text);\n\t\taddContext(this, './assets/Paso 3.png');\n\t}else {\n\t\tassert.fail(text);\n\t}\n} \ncatch (err) {\n\tthrow new Error('Conexión retardada' + err);\n}",
+              "err": {},
+              "uuid": "a1d7a9da-a43e-46a6-9931-c8d8aac095f4",
+              "parentUUID": "fc97324b-f72e-45fb-af5b-388b133e8a9c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "P4 - Probar campo",
+              "fullTitle": "Comenzando prueba P4 - Probar campo",
+              "timedOut": false,
+              "duration": 3578,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "\"./assets/Paso 4.png\"",
+              "code": "try{\n\tawait page.type('input[id=\"entercolor\"]', '#ff0000');\n\tawait page.click('button[class=\"btn btn-default\"]');\n\tawait sleep(1000);\n\tawait page.type('input[id=\"entercolor\"]', text);\n\tawait page.click('button[class=\"btn btn-default\"]');\n\tawait sleep(2000);\n\tconst errormsj = await page.$eval('div[id=\"wronginputDIV\"]', el => el.innerText);\n\tawait page.screenshot({ path: './mochawesome-report/assets/Paso 4.png'});\n\taddContext(this, './assets/Paso 4.png');\n\tif(errormsj===\"Wrong Input\"){\n\t\tconsole.log(errormsj);\n\t}else {\n\t\tassert.fail(errormsj);\n\t}\n}\ncatch (err) {\n\tthrow new Error('Conexión retardada' + err);\n}",
+              "err": {},
+              "uuid": "06dbfac5-53aa-47e2-9ecf-763f6c7f5c00",
+              "parentUUID": "fc97324b-f72e-45fb-af5b-388b133e8a9c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "P5 - Introducir color guardado",
+              "fullTitle": "Comenzando prueba P5 - Introducir color guardado",
+              "timedOut": false,
+              "duration": 2388,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "\"./assets/Paso 5.png\"",
+              "code": "try{\n\tawait page.click('input[id=\"entercolor\"]', {clickCount: 3});\n\tawait sleep(1000);\n\tawait page.keyboard.press('Backspace');\n\tawait sleep(1000);\n\tawait page.type('input[id=\"entercolor\"]', text);\n\tawait page.click('button[class=\"btn btn-default\"]');\n\tconst color = await page.$eval('span[id=\"colorhexDIV\"]', el => el.innerText);\n\tawait page.screenshot({ path: './mochawesome-report/assets/Paso 5.png'});\n\taddContext(this, './assets/Paso 5.png');\n\tif(color===text){\n\t\tconsole.log(color);\n\t}else {\n\t\tassert.fail(color);\n\t}\n}\ncatch (err) {\n\tthrow new Error('Conexión retardada' + err);\n}",
+              "err": {},
+              "uuid": "4b1b5d2c-132f-4273-b29b-a6aeacf02a0f",
+              "parentUUID": "fc97324b-f72e-45fb-af5b-388b133e8a9c",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "22a067a0-e957-463e-ad4f-e2cabbabfd19",
+            "fcc5706b-d1ef-49a0-afab-5415d8066b0a",
+            "a1d7a9da-a43e-46a6-9931-c8d8aac095f4",
+            "06dbfac5-53aa-47e2-9ecf-763f6c7f5c00",
+            "4b1b5d2c-132f-4273-b29b-a6aeacf02a0f"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 29305,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 0
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 20000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "10.0.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "testMocha",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportFilename": "testMocha"
+      },
+      "version": "6.2.0"
+    }
+  }
+}
